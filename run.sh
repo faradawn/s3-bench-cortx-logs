@@ -1,12 +1,12 @@
 export IP=192.168.84.128
-export PORT=30630
+export PORT=31419
 
-for nreqs in 100 500 1000 5000 10000 20000; do
-    for objsize in 1024; do
-        for nclients in 5; do
+for nreqs in 100; do
+    for objsize in 1024 8192 16384 32768 65536; do
+        for nclients in 80; do
             start=$(date +%s)
             nsamples=$(( ($nclients * $nreqs) ))
-            path="logs/k8cluster=1/npods=2/podsize=64g/nreqs=${nreqs}/objsize=${objsize}k/nclients=${nclients}"
+            path="logs/k8cluster=8/npods=12/podsize=64g/nreqs=${nreqs}/objsize=${objsize}k/nclients=${nclients}"
             mkdir -p $path
             echo "performing ${path}"
             ./s3bench -accessKey gregoryaccesskey -accessSecret gregorysecretkey -endpoint http://$IP:$PORT -objectNamePrefix=loadgen -region us-east-1 \
