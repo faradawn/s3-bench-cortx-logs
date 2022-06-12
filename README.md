@@ -1,7 +1,18 @@
 # Benchmarking CORTX on Kubernetes
 
 ## Benchmark log
-- [Google Doc](https://docs.google.com/document/d/1ieDX__s8iYQXpIK7ei3SwIX79j4lxqLdPQyh6cg_7pg/edit)
+- [Benchmarking log](https://docs.google.com/document/d/1ieDX__s8iYQXpIK7ei3SwIX79j4lxqLdPQyh6cg_7pg/edit)
+
+## Max throughput of cortx
+- 606 MB/s for write and 998 MB/s for write
+- configuration: 8 nodes, 2 pods, 4Gi pod size, 100 requests, 16M object size 
+```
+Clients 20 (469 MB/s, 858 MB/s, 3 min)
+Clients 40 (553 MB/s. 945 MB/s, 5 min) 
+Clients 80 (601 MB/s 998 MB/s, 13 min)
+Clients 120 (606 MB/s. 977 MB/s, 20 min)
+Clients 160 (602 MB/s, 964 MB/s, 24 min)
+```
 
 ## Deploy cortx
 ```
