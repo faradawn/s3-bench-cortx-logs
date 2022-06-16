@@ -1,6 +1,6 @@
 # Benchmarking CORTX on Kubernetes
 
-## Benchmark log
+## Benchmark results
 - [Benchmarking log](https://docs.google.com/document/d/1ieDX__s8iYQXpIK7ei3SwIX79j4lxqLdPQyh6cg_7pg/edit)
 
 ## Max throughput of cortx
@@ -14,7 +14,7 @@ Clients 120 (606 MB/s. 977 MB/s, 20 min)
 Clients 160 (602 MB/s, 964 MB/s, 24 min)
 ```
 
-## Deploy cortx
+## How to Modify the Deployment of CORTX
 ```
 # first destroy
 - 8 nodes: 1.5 min
