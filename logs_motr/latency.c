@@ -473,11 +473,12 @@ int main(int argc, char *argv[])
 	// === change me === //
 	int num_experiments = 1000;
 	int mode = 4; // mode 1 is create, mode 2 is write, mode 3 is read, mode 4 is all
-	int KB = 1024;
-	BLOCK_SIZE = 1024*KB;
+	int KB = 4096;
+	BLOCK_SIZE = 4096*KB;
 
 	if(mode == 1 || mode == 4){
 		tot_time = 0;
+		puts("Executing create");
 		fp = fopen("latency_create.txt", "a");
 		fprintf(fp, "\n=== %dKB number of experiments %d ===\n", KB, num_experiments);
 
@@ -501,6 +502,7 @@ int main(int argc, char *argv[])
 	
 	if(mode == 2 || mode == 4){
 		tot_time = 0;
+		puts("Executing write");
 		fp = fopen("latency_write.txt", "a");
 		fprintf(fp, "\n=== %dKB number of experiments %d ===\n", KB, num_experiments);
 
@@ -524,6 +526,7 @@ int main(int argc, char *argv[])
 
 	if(mode == 3 || mode == 4){
 		tot_time = 0;
+		puts("Executing read");
 		fp = fopen("latency_read.txt", "a");
 		fprintf(fp, "\n=== %dKB number of experiments %d ===\n", KB, num_experiments);
 
