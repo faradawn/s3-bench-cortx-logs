@@ -415,6 +415,7 @@ long get_current_time()
 int main(int argc, char *argv[])
 {
 	int rc;
+	long start = get_current_time();
 
 	if (argc != 6) {
 		printf("%s HA_ADDR LOCAL_ADDR Profile_fid Process_fid obj_id\n",
@@ -457,8 +458,6 @@ int main(int argc, char *argv[])
 
 	// === benchmark starts here === //
 
-	clock_t start, stop;
-
     BLOCK_COUNT = 1;
     BLOCK_SIZE = 16384;
 	debug = 0;
@@ -473,16 +472,18 @@ int main(int argc, char *argv[])
 	long long tot_time = 0;
 	int num_experiments = 1000;
     
-    fp = fopen("latency_write.txt", "a");
+    fp = fopen("latency_read.txt", "a");
 	fprintf(fp, "\n=== number of experiments %d ===\n", num_experiments);
+
+	
 	
 	for(i = 0; i<num_experiments; i++){
 		rc = object_create(&motr_container);
 		if (rc == 0) {
-			before = get_current_time();
 			rc = object_write(&motr_container);
+			before = get_current_time();
+			rc = object_read(&motr_container); 
 			after = get_current_time();
-			// rc = object_read(&motr_container); 
 			object_delete(&motr_container);
 			// printf("%.3f\n", (after-before)/1e6);
 			fprintf(fp, "%.3f\n", (after-before)/1e6);
@@ -495,7 +496,8 @@ int main(int argc, char *argv[])
 
 out:
 	m0_client_fini(m0_instance, true);
-	printf("=== Benchmark Completed: %d ===\n", rc);
+	long end = get_current_time();
+	printf("=== Benchmark Completed: %d; total %.3f minutes ===\n", rc, (end-start)/(1e9*60));
 	return rc;
 }
 
