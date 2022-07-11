@@ -471,20 +471,20 @@ int main(int argc, char *argv[])
     long before;
     long after;
 	long long tot_time = 0;
-	int num_experiments = 100;
+	int num_experiments = 1000;
     
-    fp = fopen("latency_create.txt", "a");
+    fp = fopen("latency_write.txt", "a");
 	fprintf(fp, "\n=== number of experiments %d ===\n", num_experiments);
 	
 	for(i = 0; i<num_experiments; i++){
-		before = get_current_time();
 		rc = object_create(&motr_container);
-		after = get_current_time();
 		if (rc == 0) {
+			before = get_current_time();
 			rc = object_write(&motr_container);
+			after = get_current_time();
 			// rc = object_read(&motr_container); 
 			object_delete(&motr_container);
-			printf("%.3f\n", (after-before)/1e6);
+			// printf("%.3f\n", (after-before)/1e6);
 			fprintf(fp, "%.3f\n", (after-before)/1e6);
 			tot_time += after - before;
 		}
