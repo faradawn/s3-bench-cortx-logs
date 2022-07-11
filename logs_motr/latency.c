@@ -459,7 +459,6 @@ int main(int argc, char *argv[])
 	// === benchmark starts here === //
 
     BLOCK_COUNT = 1;
-    BLOCK_SIZE = 16384;
 	debug = 0;
     
 	int i = 0;
@@ -470,29 +469,81 @@ int main(int argc, char *argv[])
     long before;
     long after;
 	long long tot_time = 0;
-	int num_experiments = 1000;
-    
-    fp = fopen("latency_read.txt", "a");
-	fprintf(fp, "\n=== number of experiments %d ===\n", num_experiments);
 
-	
-	
-	for(i = 0; i<num_experiments; i++){
-		rc = object_create(&motr_container);
-		if (rc == 0) {
-			rc = object_write(&motr_container);
+	// === change me === //
+	int num_experiments = 1000;
+	int mode = 4; // mode 1 is create, mode 2 is write, mode 3 is read, mode 4 is all
+	int KB = 1024;
+	BLOCK_SIZE = 1024*KB;
+
+	if(mode == 1 || mode == 4){
+		tot_time = 0;
+		fp = fopen("latency_create.txt", "a");
+		fprintf(fp, "\n=== %dKB number of experiments %d ===\n", KB, num_experiments);
+
+		for(i = 0; i<num_experiments; i++){
 			before = get_current_time();
-			rc = object_read(&motr_container); 
+			rc = object_create(&motr_container);
 			after = get_current_time();
-			object_delete(&motr_container);
-			// printf("%.3f\n", (after-before)/1e6);
-			fprintf(fp, "%.3f\n", (after-before)/1e6);
-			tot_time += after - before;
+			if (rc == 0) {
+				rc = object_write(&motr_container);
+				// rc = object_read(&motr_container); 
+				object_delete(&motr_container);
+				fprintf(fp, "%.3f\n", (after-before)/1e6);
+				tot_time += after - before;
+			}
 		}
+
+		fprintf(fp, "%dKB average,%.3f\n", KB, tot_time/(num_experiments*1e6));
+		printf("Create %dKB average: %.3f\n", KB, tot_time/(num_experiments*1e6));
+		fclose(fp);
 	}
-	fprintf(fp, "average,%.3f\n", tot_time/(num_experiments*1e6));
-	printf("average latency: %.3f\n", tot_time/(num_experiments*1e6));
-	fclose(fp);
+	
+	if(mode == 2 || mode == 4){
+		tot_time = 0;
+		fp = fopen("latency_write.txt", "a");
+		fprintf(fp, "\n=== %dKB number of experiments %d ===\n", KB, num_experiments);
+
+		for(i = 0; i<num_experiments; i++){
+			rc = object_create(&motr_container);
+			if (rc == 0) {
+				before = get_current_time();
+				rc = object_write(&motr_container);
+				after = get_current_time();
+				// rc = object_read(&motr_container); 
+				object_delete(&motr_container);
+				fprintf(fp, "%.3f\n", (after-before)/1e6);
+				tot_time += after - before;
+			}
+		}
+
+		fprintf(fp, "%dKB average,%.3f\n", KB, tot_time/(num_experiments*1e6));
+		printf("Write %dKB average: %.3f\n", KB, tot_time/(num_experiments*1e6));
+		fclose(fp);
+	}
+
+	if(mode == 3 || mode == 4){
+		tot_time = 0;
+		fp = fopen("latency_read.txt", "a");
+		fprintf(fp, "\n=== %dKB number of experiments %d ===\n", KB, num_experiments);
+
+		for(i = 0; i<num_experiments; i++){
+			rc = object_create(&motr_container);
+			if (rc == 0) {
+				rc = object_write(&motr_container);
+				before = get_current_time();
+				rc = object_read(&motr_container); 
+				after = get_current_time();
+				object_delete(&motr_container);
+				fprintf(fp, "%.3f\n", (after-before)/1e6);
+				tot_time += after - before;
+			}
+		}
+
+		fprintf(fp, "%dKB average,%.3f\n", KB, tot_time/(num_experiments*1e6));
+		printf("Read %dKB average: %.3f\n", KB, tot_time/(num_experiments*1e6));
+		fclose(fp);
+	}
 
 out:
 	m0_client_fini(m0_instance, true);
