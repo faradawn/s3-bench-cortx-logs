@@ -471,10 +471,10 @@ int main(int argc, char *argv[])
 	long long tot_time = 0;
 
 	// === change me === //
-	int num_experiments = 1000;
+	int num_experiments = 100;
 	int mode = 4; // mode 1 is create, mode 2 is write, mode 3 is read, mode 4 is all
 	int KB = 4096;
-	BLOCK_SIZE = 4096*KB;
+	BLOCK_SIZE = 1024*KB;
 
 	if(mode == 1 || mode == 4){
 		tot_time = 0;
