@@ -1,0 +1,23 @@
+ Parameters:                
+    label:                      2022-7-12-15-14-26-315963975
+    numClients:                 1
+    objectSize (MB):            0.062
+    copies:                     0
+ Tests:                     
+    Operation:                  Write
+    RPS:                        46.133
+    Total Requests Count:       1
+    Errors Count:               0
+    Total Throughput (MB/s):    2.883
+    Total Duration (s):         0.022
+    Total Transferred (MB):     0.062
+    Duration Max:               0.022
+    Duration Avg:               0.022
+    Duration Min:               0.022
+    Ttfb Max:                   0.022
+    Ttfb Avg:                   0.022
+    Ttfb Min:                   0.022
+    Duration 90th-ile:          0.022
+    Duration 99th-ile:          0.022
+    Ttfb 90th-ile:              0.022
+    Ttfb 99th-ile:              0.022
