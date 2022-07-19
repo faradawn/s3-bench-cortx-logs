@@ -1,21 +1,24 @@
-# script to bench MinIO
-# data are collected manully
+## create files 
 
-# download MinIo
-wget https://dl.min.io/server/minio/release/linux-amd64/minio
-chmod +x minio
-mkdir -P /mnt/data
-./minio server /mnt/data
+# for i in 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384; do
+#     ./create_file $i 1 -o
+# done
 
-# download minio-cli
-wget https://dl.min.io/client/mc/release/linux-amd64/mc
-chmod +x mc
-./mc --help
 
-# create file
-gcc -o create_file create_file.c
-./create_file 16 1 -h
 
+## mc performance test
+
+shopt -s expand_aliases
+source /etc/bashrc
+
+for i in 32; do
+    mc support perf object myminio/ --size ${i}KiB --blocksize ${i}KiB --concurrent 1 --duration 5s
+done
+
+
+# source /etc/bashrc
+
+#/home/cc/minio-bench/mc mb myminio/bucket1
 # upload and download a file
-./mc cp 16KB myminio/bucket1/
-./mc cp myminio/bucket1/16KB .
+# ./mc cp 16KB myminio/bucket1/
+# ./mc cp myminio/bucket1/16KB .
