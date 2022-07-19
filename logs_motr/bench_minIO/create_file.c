@@ -9,7 +9,7 @@
 int main(int argc, char* argv[])
 {
     if (argc != 4) {
-        fprintf(stderr, "usage: ./create_file 1 50 -o/-h (1MB, 50 files, output folder or here)\n");
+        fprintf(stderr, "usage: ./create_file 4 1 -o/-h (1KB, 1 file, output folder or here)\n");
         exit(-1);
     }
     int i = 0;
