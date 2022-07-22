@@ -1,12 +1,4 @@
-## create files 
-
-# for i in 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384; do
-#     ./create_file $i 1 -o
-# done
-
-
-
-## mc performance test
+## New method: using s3 speedtest (perf)
 
 shopt -s expand_aliases
 source /etc/bashrc
@@ -16,8 +8,14 @@ for i in 32; do
 done
 
 
-# source /etc/bashrc
 
+## Old method: create files and upload 
+
+# for i in 4 8 16 32 64 128 256 512 1024 2048 4096 8192 16384; do
+#     ./create_file $i 1 -o
+# done
+
+# source /etc/bashrc
 #/home/cc/minio-bench/mc mb myminio/bucket1
 # upload and download a file
 # ./mc cp 16KB myminio/bucket1/
