@@ -1,0 +1,41 @@
+ Parameters:                
+    label:                      2022-6-11-17-28-54-647294588
+    numClients:                 5
+    objectSize (MB):            1.000
+    copies:                     0
+ Tests:                     
+    Operation:                  Write
+    RPS:                        47.219
+    Total Requests Count:       50000
+    Errors Count:               0
+    Total Throughput (MB/s):    47.219
+    Total Duration (s):         1058.906
+    Total Transferred (MB):     50000.000
+    Duration Max:               0.570
+    Duration Avg:               0.106
+    Duration Min:               0.050
+    Ttfb Max:                   0.570
+    Ttfb Avg:                   0.106
+    Ttfb Min:                   0.050
+    Duration 90th-ile:          0.125
+    Duration 99th-ile:          0.193
+    Ttfb 90th-ile:              0.125
+    Ttfb 99th-ile:              0.193
+
+    Operation:                  Read
+    RPS:                        93.648
+    Total Requests Count:       50000
+    Errors Count:               0
+    Total Throughput (MB/s):    93.648
+    Total Duration (s):         533.917
+    Total Transferred (MB):     50000.000
+    Duration Max:               0.427
+    Duration Avg:               0.053
+    Duration Min:               0.016
+    Ttfb Max:                   0.426
+    Ttfb Avg:                   0.053
+    Ttfb Min:                   0.015
+    Duration 90th-ile:          0.083
+    Duration 99th-ile:          0.132
+    Ttfb 90th-ile:              0.082
+    Ttfb 99th-ile:              0.132
