@@ -1,41 +1,41 @@
  Parameters:                
-    label:                      2022-7-30-4-8-34-73621755
+    label:                      2022-7-29-19-48-18-569065323
     numClients:                 1
     objectSize (MB):            0.125
     copies:                     0
  Tests:                     
     Operation:                  Write
-    RPS:                        214.613
+    RPS:                        106.216
     Total Requests Count:       10000
     Errors Count:               0
-    Total Throughput (MB/s):    26.827
-    Total Duration (s):         46.596
+    Total Throughput (MB/s):    13.277
+    Total Duration (s):         94.148
     Total Transferred (MB):     1250.000
-    Duration Max:               0.063
-    Duration Avg:               0.005
-    Duration Min:               0.002
-    Ttfb Max:                   0.063
-    Ttfb Avg:                   0.005
-    Ttfb Min:                   0.002
-    Duration 90th-ile:          0.011
-    Duration 99th-ile:          0.016
-    Ttfb 90th-ile:              0.011
-    Ttfb 99th-ile:              0.016
+    Duration Max:               0.138
+    Duration Avg:               0.009
+    Duration Min:               0.003
+    Ttfb Max:                   0.138
+    Ttfb Avg:                   0.009
+    Ttfb Min:                   0.003
+    Duration 90th-ile:          0.026
+    Duration 99th-ile:          0.036
+    Ttfb 90th-ile:              0.026
+    Ttfb 99th-ile:              0.036
 
     Operation:                  Read
-    RPS:                        556.854
+    RPS:                        376.538
     Total Requests Count:       10000
     Errors Count:               0
-    Total Throughput (MB/s):    69.607
-    Total Duration (s):         17.958
+    Total Throughput (MB/s):    47.067
+    Total Duration (s):         26.558
     Total Transferred (MB):     1250.000
-    Duration Max:               0.015
-    Duration Avg:               0.002
-    Duration Min:               0.001
-    Ttfb Max:                   0.015
+    Duration Max:               0.061
+    Duration Avg:               0.003
+    Duration Min:               0.002
+    Ttfb Max:                   0.059
     Ttfb Avg:                   0.002
-    Ttfb Min:                   0.001
-    Duration 90th-ile:          0.002
-    Duration 99th-ile:          0.003
-    Ttfb 90th-ile:              0.002
-    Ttfb 99th-ile:              0.003
+    Ttfb Min:                   0.002
+    Duration 90th-ile:          0.003
+    Duration 99th-ile:          0.005
+    Ttfb 90th-ile:              0.003
+    Ttfb 99th-ile:              0.005

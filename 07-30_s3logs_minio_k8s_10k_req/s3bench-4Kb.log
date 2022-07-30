@@ -1,41 +1,41 @@
  Parameters:                
-    label:                      2022-7-30-4-5-12-835063138
+    label:                      2022-7-29-19-40-59-45433512
     numClients:                 1
     objectSize (MB):            0.004
     copies:                     0
  Tests:                     
     Operation:                  Write
-    RPS:                        611.067
+    RPS:                        313.315
     Total Requests Count:       10000
     Errors Count:               0
-    Total Throughput (MB/s):    2.387
-    Total Duration (s):         16.365
+    Total Throughput (MB/s):    1.224
+    Total Duration (s):         31.917
     Total Transferred (MB):     39.062
-    Duration Max:               0.043
+    Duration Max:               0.065
+    Duration Avg:               0.003
+    Duration Min:               0.002
+    Ttfb Max:                   0.065
+    Ttfb Avg:                   0.003
+    Ttfb Min:                   0.002
+    Duration 90th-ile:          0.004
+    Duration 99th-ile:          0.013
+    Ttfb 90th-ile:              0.004
+    Ttfb 99th-ile:              0.013
+
+    Operation:                  Read
+    RPS:                        636.179
+    Total Requests Count:       10000
+    Errors Count:               0
+    Total Throughput (MB/s):    2.485
+    Total Duration (s):         15.719
+    Total Transferred (MB):     39.062
+    Duration Max:               0.035
     Duration Avg:               0.002
     Duration Min:               0.001
-    Ttfb Max:                   0.043
+    Ttfb Max:                   0.035
     Ttfb Avg:                   0.002
     Ttfb Min:                   0.001
     Duration 90th-ile:          0.002
-    Duration 99th-ile:          0.004
+    Duration 99th-ile:          0.003
     Ttfb 90th-ile:              0.002
-    Ttfb 99th-ile:              0.004
-
-    Operation:                  Read
-    RPS:                        1072.976
-    Total Requests Count:       10000
-    Errors Count:               0
-    Total Throughput (MB/s):    4.191
-    Total Duration (s):         9.320
-    Total Transferred (MB):     39.062
-    Duration Max:               0.013
-    Duration Avg:               0.001
-    Duration Min:               0.001
-    Ttfb Max:                   0.013
-    Ttfb Avg:                   0.001
-    Ttfb Min:                   0.001
-    Duration 90th-ile:          0.001
-    Duration 99th-ile:          0.002
-    Ttfb 90th-ile:              0.001
-    Ttfb 99th-ile:              0.002
+    Ttfb 99th-ile:              0.003

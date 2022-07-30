@@ -1,41 +1,41 @@
  Parameters:                
-    label:                      2022-7-30-4-6-57-205095226
+    label:                      2022-7-29-19-44-29-588046017
     numClients:                 1
     objectSize (MB):            0.031
     copies:                     0
  Tests:                     
     Operation:                  Write
-    RPS:                        415.137
+    RPS:                        158.578
     Total Requests Count:       10000
     Errors Count:               0
-    Total Throughput (MB/s):    12.973
-    Total Duration (s):         24.088
+    Total Throughput (MB/s):    4.956
+    Total Duration (s):         63.061
     Total Transferred (MB):     312.500
-    Duration Max:               0.131
-    Duration Avg:               0.002
-    Duration Min:               0.001
-    Ttfb Max:                   0.131
-    Ttfb Avg:                   0.002
-    Ttfb Min:                   0.001
-    Duration 90th-ile:          0.003
-    Duration 99th-ile:          0.010
-    Ttfb 90th-ile:              0.003
-    Ttfb 99th-ile:              0.010
+    Duration Max:               0.271
+    Duration Avg:               0.006
+    Duration Min:               0.002
+    Ttfb Max:                   0.271
+    Ttfb Avg:                   0.006
+    Ttfb Min:                   0.002
+    Duration 90th-ile:          0.019
+    Duration 99th-ile:          0.028
+    Ttfb 90th-ile:              0.019
+    Ttfb 99th-ile:              0.028
 
     Operation:                  Read
-    RPS:                        918.640
+    RPS:                        538.767
     Total Requests Count:       10000
     Errors Count:               0
-    Total Throughput (MB/s):    28.708
-    Total Duration (s):         10.886
+    Total Throughput (MB/s):    16.836
+    Total Duration (s):         18.561
     Total Transferred (MB):     312.500
-    Duration Max:               0.018
-    Duration Avg:               0.001
+    Duration Max:               0.036
+    Duration Avg:               0.002
     Duration Min:               0.001
-    Ttfb Max:                   0.018
-    Ttfb Avg:                   0.001
+    Ttfb Max:                   0.036
+    Ttfb Avg:                   0.002
     Ttfb Min:                   0.001
-    Duration 90th-ile:          0.001
-    Duration 99th-ile:          0.002
-    Ttfb 90th-ile:              0.001
-    Ttfb 99th-ile:              0.002
+    Duration 90th-ile:          0.002
+    Duration 99th-ile:          0.004
+    Ttfb 90th-ile:              0.002
+    Ttfb 99th-ile:              0.004
